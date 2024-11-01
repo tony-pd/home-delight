@@ -1,0 +1,53 @@
+section.contact-form-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: black;
+  padding: 20px;
+  padding-top: 5rem;
+}
+div.container_parent {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.container_parent img {
+  width: 40%;
+}
+
+.container_parent form {
+  width: 50%;
+}
+
+h2 {
+  font-size: 225%;
+  text-align: center;
+  color: gray;
+  text-transform: uppercase;
+  width: fit-content;
+  border-bottom: 4px solid #f63854;
+  margin: 0em 0em 1em 0em;
+}
+
+input[type="text"],
+input[type="email"],
+select,
+textarea {
+  border: 2px solid grey;
+  border-radius: 3%;
+  width: 100%;
+  padding: 3%;
+  margin-bottom: 3%;
+}
+
+textarea {
+  height: 7rem;
+}
+
+input[type="checkbox"] {
+  margin-bottom: 5%;
+}
+
+.checkbox-conditions {
+  color: white;
+}

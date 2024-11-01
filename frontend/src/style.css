@@ -1,0 +1,65 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+.nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 1rem 2rem;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.nav .nav-link {
+  font-size: 1.2rem;
+}
+header {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.6)),
+    url(../assets/headerbg.jpg);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  height: 65vh;
+}
+nav > ul {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+  list-style-type: none;
+  padding: 10px 20px;
+}
+ul a {
+  text-decoration: none;
+  color: white;
+}
+main {
+  padding: 100px;
+}
+h1 {
+  color: white;
+}
+.btn {
+  background-color: white;
+  padding: 12px 22px;
+  margin-top: 10px;
+  margin-right: 20px;
+  color: black;
+  border-radius: 20px;
+  display: inline-block;
+  transition: transform 0.3s;
+}
+.btn:hover {
+  transform: scale(1.2);
+}
+.btn-empty {
+  background-color: #000000;
+  border: 2px solid #f63854;
+  color: white;
+}
+a.btn {
+  text-decoration: none;
+}
+.products {
+  background-color: #ffe5b4;
+}

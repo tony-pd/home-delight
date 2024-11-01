@@ -1,0 +1,34 @@
+.add-to-cart {
+  display: flex;
+  align-items: center;
+}
+
+.add,
+.remove {
+  background-color: black;
+  color: white;
+  padding: 1rem 1.5rem;
+  border-radius: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+  font-size: 1.4rem;
+  border: none;
+  min-width: 3rem; /* Set a minimum width to avoid text distortion */
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1; /* Allow button to grow to fit content */
+}
+
+.add:hover,
+.remove:hover {
+  background-color: white; /* Hover background color for good contrast */
+  color: black;
+  transform: scale(1.05);
+}
+
+.quantity {
+  padding: 0 0.5rem;
+  font-size: 1.4rem;
+}
