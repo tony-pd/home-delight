@@ -7,7 +7,7 @@ const { DB_USER, DB_PASSWORD } = process.env;
 
 const app = express();
 
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 const dbURL = `mongodb+srv://${DB_USER}:${DB_PASSWORD}@cluster0.may1etf.mongodb.net/food?retryWrites=true&w=majority&appName=Cluster0`;
 //mongodb+srv://bifiti4729:csxSrDy9wpcUVeBk@cluster0.may1etf.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0

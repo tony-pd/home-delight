@@ -2,10 +2,12 @@
   "name": "hw",
   "version": "1.0.0",
   "description": "",
-  "main": "finalAPI.js",
+  "main": "api.js",
   "scripts": {
     "dev": "MODE=DEV nodemon info.env index.js",
-    "test": "jest --watchAll"
+    "test": "jest --watchAll",
+    "install": "cd backend && npm i && cd ../frontend && npm i --production=false",
+    "render-build":"npm install && npm run build"
   },
   "keywords": [],
   "author": "",
