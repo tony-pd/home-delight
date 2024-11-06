@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "MODE=DEV nodemon info.env index.js",
     "test": "jest --watchAll",
-    "install": "cd backend && npm i && cd ../frontend && npm i --production=false",
+    "install": "npm i && cd ../frontend && npm i --production=false",
     "render-build":"npm install && npm run build"
   },
   "keywords": [],
