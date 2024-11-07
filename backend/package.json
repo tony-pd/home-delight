@@ -5,9 +5,7 @@
   "main": "api.js",
   "scripts": {
     "dev": "MODE=DEV nodemon info.env index.js",
-    "test": "jest --watchAll",
-    "install": "npm i && cd ../frontend && npm i --production=false",
-    "render-build":"npm install && npm run build"
+    "test": "jest --watchAll"
   },
   "keywords": [],
   "author": "",
