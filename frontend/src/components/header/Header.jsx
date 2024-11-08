@@ -3,6 +3,7 @@ import './header.css';
 import Modal from '../../Modal';
 import axios from 'axios';
 import AuthContext from '../../context/cart/AuthContext';
+import { baseUrl } from '../../constants';
 
 const Header = () => {
   const [isLoginOpen, setLoginOpen] = useState(false);
@@ -29,7 +30,7 @@ const Header = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:3000/api/v1/user/login', loginState);
+      const response = await axios.post(baseUrl + '/api/v1/user/login', loginState);
       console.log(response.data);
       closeLogin();
       setAuthState({ loggedIn: true, username: response?.data?.data?.name });

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import axios from 'axios';
 import "./contact.css";
+import { baseUrl } from "../../constants";
 
 const Contact = () => {
   const [formState, setFormState] = useState({
@@ -14,7 +15,7 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-        const response = await axios.post('http://localhost:3000/send-email', { name: formState.name, email: formState.email });
+        const response = await axios.post(baseUrl + '/send-email', { name: formState.name, email: formState.email });
         alert('Email sent successfully!');
     } catch (error) {
         alert('Error sending email: ' + error.message);

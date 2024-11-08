@@ -72,7 +72,7 @@ app.listen(PORT, function () {
 
 const corsOptions = {
   //origin: 'http://localhost:5173',
-  origin: 'https://home-delight.vercel.app/',
+  origin: 'https://home-delight-api.vercel.app/',
   methods: 'GET,POST,PUT,DELETE',
   //allowedHeaders: 'Content-Type,Authorization',
   credentials: true

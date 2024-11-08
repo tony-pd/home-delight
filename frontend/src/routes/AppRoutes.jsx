@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import useFetchData from '../hooks/useFetchData';
 import Navbar from "../components/navbar/Navbar";
 import ProductLinks from '../components/productLinks/ProductLinks';
+import { baseUrl } from '../constants';
 
 const Header = lazy(()=> import('../components/header/Header'));
 const NotFound = lazy(()=> import('../pages/notFound/NotFound'));
@@ -19,13 +20,13 @@ const AppRoutes = () => {
     secIsLoading, 
     secError, 
     data: sections 
-  } = useFetchData("http://localhost:3000/categories", []);
+  } = useFetchData(baseUrl + "/categories", []);
 
   const { 
     isLoading, 
     error, 
     data: categories 
-  } = useFetchData("http://localhost:3000/products/categories", []);
+  } = useFetchData(baseUrl + "/products/categories", []);
           
     return (
         <>       

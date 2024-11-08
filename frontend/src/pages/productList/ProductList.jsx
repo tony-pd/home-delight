@@ -5,6 +5,7 @@ import Product from "../../components/product/Product";
 import useFetchData from "../../hooks/useFetchData";
 import Pagination from "../../components/pagination";
 import './productList.css'
+import { baseUrl } from "../../constants";
 
 const ProductList = () => {
 
@@ -14,7 +15,7 @@ const ProductList = () => {
         error, 
         data: products
     } = useFetchData(
-        `http://localhost:3000/api/v1/product/`
+        baseUrl + `/api/v1/product/`
         //${ categoryName ? 'category': '' }`        
     );
 
