@@ -31,14 +31,15 @@ const jwt = require("jsonwebtoken");
 const emailSender = require("./email/email_sender");
 const promisify = require("util").promisify;
 const cors = require("cors");
+const { baseUrl, clientUrl } = require("./constants");
 
 const sign = promisify(jwt.sign);
 const verify = promisify(jwt.verify);
 
-app.use("/api/v1/user", UserRouter);
-app.use("/api/v1/product", ProductRouter);
+app.use(baseUrl + "/api/v1/user", UserRouter);
+app.use(baseUrl + "/api/v1/product", ProductRouter);
 
-app.get("/categories", (req, res) => {
+app.get(baseUrl + "/categories", (req, res) => {
   const categories = [
     {
       label: "Home",
@@ -60,7 +61,7 @@ app.get("/categories", (req, res) => {
   res.status(200).json(categories);
 });
 
-app.get("/products/categories", (req, res) => {
+app.get(baseUrl + "/products/categories", (req, res) => {
   const categories = ["breakfast", "lunch", "dinner"];
   res.status(200).json(categories);
 });
@@ -71,8 +72,7 @@ app.listen(PORT, function () {
 });
 
 const corsOptions = {
-  //origin: 'http://localhost:5173',
-  origin: 'https://home-delight.vercel.app/',
+  origin: clientUrl,
   methods: 'GET,POST,PUT,DELETE',
   //allowedHeaders: 'Content-Type,Authorization',
   credentials: true
@@ -81,7 +81,7 @@ const corsOptions = {
 app.use(cors(corsOptions));
 app.use(cookieParser());
 
-app.get("/set-cookie", function (req, res) {
+app.get(baseUrl + "/set-cookie", function (req, res) {
   res.cookie("myCookie", "home", {
     maxAge: 6000000,
     httpOnly: true,
@@ -92,7 +92,7 @@ app.get("/set-cookie", function (req, res) {
   });
 });
 
-app.get("/get-cookie", function (req, res) {
+app.get(baseUrl + "/get-cookie", function (req, res) {
   let msg = "";
   if (req.cookies.myCookie) {
     msg = "you came from " + req.cookies.myCookie;
@@ -103,7 +103,7 @@ app.get("/get-cookie", function (req, res) {
   });
 });
 
-app.get("/clear-cookie", function (req, res) {
+app.get(baseUrl + "/clear-cookie", function (req, res) {
   res.clearCookie("myCookie", { path: "/" });
 
   res.status(200).json({
@@ -114,7 +114,7 @@ app.get("/clear-cookie", function (req, res) {
 const payload = "1234";
 const secret = "secret";
 
-app.get("/sign", async function (req, res) {
+app.get(baseUrl + "/sign", async function (req, res) {
   try {
     const authToken = await sign({ data: payload }, secret);
 
@@ -133,7 +133,7 @@ app.get("/sign", async function (req, res) {
   }
 });
 
-app.get("/verify", async function (req, res) {
+app.get(baseUrl + "/verify", async function (req, res) {
   try {
     const authToken = await req.cookies.jwt;
     const decoded = verify(authToken, secret);
@@ -149,7 +149,7 @@ app.get("/verify", async function (req, res) {
   }
 });
 
-app.post("/send-email", function (req, res) {
+app.post(baseUrl + "/send-email", function (req, res) {
   const { name, email } = req.body;
 
   emailSender(email, "welcome mail", "welcome.html", {

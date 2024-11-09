@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const fs = require("fs");
 const path = require("path");
+const { baseUrl } = require("../constants");
 
 const getUserData = (req, res) => {
   const filePath = path.join(__dirname, "data.json");
@@ -30,7 +31,7 @@ const getUserData = (req, res) => {
   });
 };
 
-app.get("/api/user", getUserData);
+app.get(baseUrl + "/api/user", getUserData);
 
 app.listen(3000, () => {
   console.log("server is listening on port 3000");
