@@ -36,10 +36,10 @@ const { baseUrl, clientUrl } = require("./constants");
 const sign = promisify(jwt.sign);
 const verify = promisify(jwt.verify);
 
-app.use(baseUrl + "/api/v1/user", UserRouter);
-app.use(baseUrl + "/api/v1/product", ProductRouter);
+app.use("/api/v1/user", UserRouter);
+app.use("/api/v1/product", ProductRouter);
 
-app.get(baseUrl + "/categories", (req, res) => {
+app.get("/categories", (req, res) => {
   const categories = [
     {
       label: "Home",
@@ -61,7 +61,7 @@ app.get(baseUrl + "/categories", (req, res) => {
   res.status(200).json(categories);
 });
 
-app.get(baseUrl + "/products/categories", (req, res) => {
+app.get("/products/categories", (req, res) => {
   const categories = ["breakfast", "lunch", "dinner"];
   res.status(200).json(categories);
 });
@@ -81,7 +81,7 @@ const corsOptions = {
 app.use(cors(corsOptions));
 app.use(cookieParser());
 
-app.get(baseUrl + "/set-cookie", function (req, res) {
+app.get("/set-cookie", function (req, res) {
   res.cookie("myCookie", "home", {
     maxAge: 6000000,
     httpOnly: true,
@@ -92,7 +92,7 @@ app.get(baseUrl + "/set-cookie", function (req, res) {
   });
 });
 
-app.get(baseUrl + "/get-cookie", function (req, res) {
+app.get("/get-cookie", function (req, res) {
   let msg = "";
   if (req.cookies.myCookie) {
     msg = "you came from " + req.cookies.myCookie;
@@ -103,7 +103,7 @@ app.get(baseUrl + "/get-cookie", function (req, res) {
   });
 });
 
-app.get(baseUrl + "/clear-cookie", function (req, res) {
+app.get("/clear-cookie", function (req, res) {
   res.clearCookie("myCookie", { path: "/" });
 
   res.status(200).json({
@@ -114,7 +114,7 @@ app.get(baseUrl + "/clear-cookie", function (req, res) {
 const payload = "1234";
 const secret = "secret";
 
-app.get(baseUrl + "/sign", async function (req, res) {
+app.get("/sign", async function (req, res) {
   try {
     const authToken = await sign({ data: payload }, secret);
 
@@ -133,7 +133,7 @@ app.get(baseUrl + "/sign", async function (req, res) {
   }
 });
 
-app.get(baseUrl + "/verify", async function (req, res) {
+app.get("/verify", async function (req, res) {
   try {
     const authToken = await req.cookies.jwt;
     const decoded = verify(authToken, secret);
@@ -149,7 +149,7 @@ app.get(baseUrl + "/verify", async function (req, res) {
   }
 });
 
-app.post(baseUrl + "/send-email", function (req, res) {
+app.post("/send-email", function (req, res) {
   const { name, email } = req.body;
 
   emailSender(email, "welcome mail", "welcome.html", {

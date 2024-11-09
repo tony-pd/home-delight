@@ -31,7 +31,7 @@ const getUserData = (req, res) => {
   });
 };
 
-app.get(baseUrl + "/api/user", getUserData);
+app.get("/api/user", getUserData);
 
 app.listen(3000, () => {
   console.log("server is listening on port 3000");
