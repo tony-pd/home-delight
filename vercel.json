@@ -7,5 +7,6 @@
     "routes": [{
         "src": "/(.*)",
         "dest": "/"
-    }]
+    }],
+    "images": { "sizes": [320, 640, 750, 828, 1080, 1200], "dangerouslyAllowSVG": true }
 }
