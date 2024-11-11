@@ -28,7 +28,7 @@ const Contact = () => {
         <div class="container_parent">
           <img
             class="bg-video__content"
-            src="assets/avacado.svg"
+            src="./assets/avacado.svg"
             alt="avocado-svg"
           />
           <form class="form" onSubmit={handleSubmit}>

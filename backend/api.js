@@ -74,12 +74,11 @@ app.listen(PORT, function () {
 const corsOptions = {
   origin: clientUrl,
   methods: 'GET,POST,PUT,DELETE',
-  //allowedHeaders: 'Content-Type,Authorization',
-  credentials: true
+  allowedHeaders: 'Content-Type,Authorization'
 };
 
-//app.use(cors(corsOptions));
-app.use(cors());
+app.use(cors(corsOptions));
+//app.use(cors());
 app.use(cookieParser());
 
 app.get("/set-cookie", function (req, res) {
