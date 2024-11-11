@@ -4,7 +4,11 @@ import AddToCart from "../addToCart/AddToCart";
 
 const Product = ({ product }) => (
   <div className="product-item">
-    <img className="product-image" src={product.image} alt={product.title} />
+    <img className="product-image" 
+      src={product.image} 
+      width={"100%"}
+      height={"auto"}
+      alt={product.title} />
     <div className="product-details">
       <div className="product-title">{product.title}</div>
       <div className="buy-item">
