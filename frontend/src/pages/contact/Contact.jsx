@@ -28,7 +28,7 @@ const Contact = () => {
         <div class="container_parent">
           <img
             class="bg-video__content"
-            src="./public/avacado.svg"
+            src="../../../public/avocado.svg"
             width={"100%"}
             height={"auto"}
             alt="avocado-svg"
