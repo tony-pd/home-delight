@@ -7,5 +7,15 @@
     "routes": [{
         "src": "/(.*)",
         "dest": "/"
-    }]
+    }],
+    "images": {
+         "formats": ["image/avif", "image/webp"], 
+         "sizes": [320, 640, 960, 1280, 1920], 
+         "remotePatterns": [ { 
+            "protocol": "https", 
+            "hostname": "home-delight.vercel.app", 
+            "pathname": "/public/**" } 
+        ], 
+        "minimumCacheTTL": 31536000 
+    }
 }
