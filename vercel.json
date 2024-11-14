@@ -8,6 +8,12 @@
         "src": "/(.*)",
         "dest": "/"
     }],
+    "rewrites": [
+        {
+            "source": "/(.*)",
+            "destination": "/"
+        }
+    ],
     "images": {
          "formats": ["image/avif", "image/webp"], 
          "sizes": [320, 640, 960, 1280, 1920], 
