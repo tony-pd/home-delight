@@ -6,7 +6,7 @@ import { baseUrl } from '../../constants';
 const Product = ({ product }) => (
   <div className="product-item">
     <img className="product-image" 
-      src={product.image} 
+      src={"public/products/" + product.image[0]} 
       width={"100%"}
       height={"auto"}
       alt={product.title} />
