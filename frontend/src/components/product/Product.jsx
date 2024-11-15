@@ -3,12 +3,11 @@ import './product.css';
 import AddToCart from "../addToCart/AddToCart";
 import { baseUrl } from '../../constants';
 
-const Product = ({ product }) => (
+const Product = ({ product }) => {
+return (
   <div className="product-item">
     <img className="product-image" 
-      src={"public/products/" + product.image[0]} 
-      width={"100%"}
-      height={"auto"}
+      src={"public/products/" + product.image[0]}
       alt={product.title} />
     <div className="product-details">
       <div className="product-title">{product.title}</div>
@@ -18,6 +17,6 @@ const Product = ({ product }) => (
       </div>
     </div>
   </div>
-);
+)};
 
 export default Product;
