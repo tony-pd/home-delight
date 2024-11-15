@@ -8,7 +8,7 @@ const CartItem = ({ cartData }) => {
     <div className="cart-item">
     <div className="cart-item-details">
         <div className="cart-item-image">
-            <img src={image} alt={title} />
+            <img src={"./products/" + image} alt={title} />
         </div>    
     </div>
     <h3 className="cart-item-name">{title}</h3>
