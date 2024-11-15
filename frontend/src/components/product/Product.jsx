@@ -7,7 +7,7 @@ const Product = ({ product }) => {
 return (
   <div className="product-item">
     <img className="product-image" 
-      src={"public/products/" + product.image[0]}
+      src={"./products/" + product.image[0]}
       alt={product.title} />
     <div className="product-details">
       <div className="product-title">{product.title}</div>
